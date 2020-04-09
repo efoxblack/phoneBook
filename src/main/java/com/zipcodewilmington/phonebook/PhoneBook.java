@@ -40,14 +40,21 @@ public class PhoneBook {
     }
 
     public String reverseLookup(String phoneNumber)  {
-        List<String> key = new ArrayList<>();
-//        for (String loop : key) {
-//
-//        }
-        return null;
+        String key = "";
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            key += entry.getKey();
+            if (key.equals(phoneNumber)) {
+                return key;
+            }
+        }
+        return key;
     }
 
     public List<String> getAllContactNames() {
+//        Iterator<List<String>> itr = map.values().iterator();
+//        while (itr.hasNext()) {
+//            itr.next();
+//        }
         return null;
     }
 
