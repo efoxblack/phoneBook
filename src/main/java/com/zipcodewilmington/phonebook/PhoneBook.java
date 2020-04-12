@@ -40,22 +40,20 @@ public class PhoneBook {
     }
 
     public String reverseLookup(String phoneNumber)  {
-        String key = "";
         for (Map.Entry<String, List<String>> entry : map.entrySet()) {
-            key += entry.getKey();
-            if (key.equals(phoneNumber)) {
-                return key;
+            if (entry.getValue().contains(phoneNumber)) {
+                return entry.getKey();
             }
         }
-        return key;
+        return null;
     }
 
     public List<String> getAllContactNames() {
-//        Iterator<List<String>> itr = map.values().iterator();
-//        while (itr.hasNext()) {
-//            itr.next();
-//        }
-        return null;
+        List<String> list = new ArrayList<>();
+        for (Map.Entry<String, List<String>> entry : map.entrySet()) {
+            list.add(entry.getKey());
+        }
+        return list;
     }
 
     public Map<String, List<String>> getMap() {
