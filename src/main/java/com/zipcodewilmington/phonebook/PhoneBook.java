@@ -59,4 +59,11 @@ public class PhoneBook {
     public Map<String, List<String>> getMap() {
         return map;
     }
+
+    @Override
+    public String toString() {
+        return "PhoneBook{" +
+                "map=" + map +
+                '}';
+    }
 }
